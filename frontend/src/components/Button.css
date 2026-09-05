@@ -1,0 +1,86 @@
+.sm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.sm-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.sm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* sizes */
+.sm-btn--sm { padding: 6px 12px; font-size: 12.5px; }
+.sm-btn--md { padding: 9px 16px; font-size: 13.5px; }
+.sm-btn--lg { padding: 11px 20px; font-size: 14.5px; }
+
+/* variants */
+.sm-btn--primary {
+  background: var(--accent);
+  color: #0d1210;
+}
+.sm-btn--primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.sm-btn--secondary {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.sm-btn--secondary:hover:not(:disabled) {
+  border-color: var(--text-tertiary);
+  background: var(--border-soft);
+}
+
+.sm-btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.sm-btn--ghost:hover:not(:disabled) {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+}
+
+.sm-btn--danger {
+  background: transparent;
+  color: var(--danger);
+  border-color: transparent;
+}
+.sm-btn--danger:hover:not(:disabled) {
+  background: var(--danger-soft);
+}
+
+.sm-btn__spinner {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-top-color: currentColor;
+  animation: sm-spin 0.7s linear infinite;
+}
+.sm-btn--secondary .sm-btn__spinner,
+.sm-btn--ghost .sm-btn__spinner,
+.sm-btn--danger .sm-btn__spinner {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: currentColor;
+}
+
+@keyframes sm-spin {
+  to { transform: rotate(360deg); }
+}

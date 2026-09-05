@@ -1,0 +1,136 @@
+.sm-page {
+  padding: 32px 40px;
+  max-width: 980px;
+}
+
+.sm-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+
+.sm-page__header h1 {
+  font-size: 22px;
+  margin: 0 0 6px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.sm-page__header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+}
+
+.sm-stats {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.sm-stat {
+  flex: 1;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+.sm-stat:last-child {
+  border-right: none;
+}
+
+.sm-stat__value {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.sm-stat__label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.sm-empty {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+.sm-empty p {
+  margin: 0;
+  font-size: 13.5px;
+}
+
+.sm-server-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sm-server-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+.sm-server-row:last-child {
+  border-bottom: none;
+}
+.sm-server-row:hover {
+  background: var(--surface-raised);
+}
+.sm-server-row:hover .sm-server-row__chevron {
+  transform: translateX(2px);
+  color: var(--accent);
+}
+
+.sm-server-row__main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.sm-server-row__name {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.sm-server-row__meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.sm-server-row__tools {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.sm-server-row__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.sm-server-row__chevron {
+  color: var(--text-tertiary);
+  transition: transform var(--duration-base) var(--ease-out), color var(--duration-base) var(--ease-out);
+  flex-shrink: 0;
+}

@@ -1,0 +1,15 @@
+.sm-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sm-layout__content {
+  flex: 1;
+  min-width: 0;
+  animation: sm-fade-in var(--duration-base) var(--ease-out);
+}
+
+@keyframes sm-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

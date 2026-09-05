@@ -1,0 +1,110 @@
+:root {
+  /* Color - deep graphite/navy base, single muted teal accent */
+  --bg: #12151a;
+  --surface: #1b1f27;
+  --surface-raised: #20252f;
+  --border: #2a2f3a;
+  --border-soft: #232833;
+
+  --text-primary: #e7e9ec;
+  --text-secondary: #8b93a1;
+  --text-tertiary: #5c6472;
+
+  --accent: #4fd1c5;
+  --accent-hover: #3fc0b3;
+  --accent-soft: rgba(79, 209, 197, 0.12);
+  --accent-soft-hover: rgba(79, 209, 197, 0.2);
+
+  --success: #6ee7a0;
+  --success-soft: rgba(110, 231, 160, 0.12);
+  --danger: #f0776c;
+  --danger-soft: rgba(240, 119, 108, 0.12);
+  --warning: #eab86c;
+
+  /* Type */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+
+  /* Radius - restrained, only two sizes so hierarchy is legible */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+
+  /* Layout */
+  --sidebar-width: 232px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+code,
+.mono {
+  font-family: var(--font-mono);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent-soft-hover);
+  color: var(--text-primary);
+}
+
+/* Scrollbars - thin, quiet, matches the graphite surfaces */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Visible keyboard focus - accessible, not decorative */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
