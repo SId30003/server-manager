@@ -1,21 +1,19 @@
 services:
   backend:
-    build:
-      context: .
-      dockerfile: backend.Dockerfile
+    build: ./backend
     container_name: server-manager-backend
     restart: unless-stopped
     env_file:
       - ./backend/.env
     ports:
       - "4000:4000"
+    volumes:
+      - ./backend/data:/app/data
     networks:
       - server-manager-net
 
   frontend:
-    build:
-      context: .
-      dockerfile: frontend.Dockerfile
+    build: ./frontend
     container_name: server-manager-frontend
     restart: unless-stopped
     ports:
